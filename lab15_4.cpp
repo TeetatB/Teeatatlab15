@@ -1,4 +1,5 @@
 #include <iostream>
+#include <iostream>
 #include <cstdlib>
 #include <ctime>
 using namespace std;
@@ -16,4 +17,18 @@ int main(){
 	}
 	
 	return 0;
+}
+
+void shuffle(int &a,int &b,int &c,int &d){
+    int x[4] = {a,b,c,d};
+    for(int i = 0;i<4;i++){
+        int n = rand() % 4;
+        int m = x[i];
+        x[i] = x[n];
+        x[n] = m;
+    }
+    a = x[0];
+    b = x[1];
+    c = x[2];
+    d = x[3];
 }
