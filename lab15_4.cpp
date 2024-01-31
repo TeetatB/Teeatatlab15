@@ -1,5 +1,4 @@
 #include <iostream>
-#include <iostream>
 #include <cstdlib>
 #include <ctime>
 using namespace std;
@@ -20,15 +19,19 @@ int main(){
 }
 
 void shuffle(int &a,int &b,int &c,int &d){
-    int x[4] = {a,b,c,d};
-    for(int i = 0;i<4;i++){
-        int n = rand() % 4;
-        int m = x[i];
-        x[i] = x[n];
-        x[n] = m;
-    }
-    a = x[0];
-    b = x[1];
-    c = x[2];
-    d = x[3];
+	int x = rand()%4;
+	int y = a;
+	if(x==0) a = a;
+	else if(x==1){
+		a = b;
+		b = y;
+	} 
+	else if(x==2){
+		a = c;
+		c = y;
+	} 
+	else{
+		a = d;
+		d = y;
+	}
 }
